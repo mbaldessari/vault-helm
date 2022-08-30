@@ -26,7 +26,7 @@ spec:
     name: {{ $serviceName }}
     weight: 100
   port:
-    targetPort: 8200
+    targetPort: {{ .Values.server.route.port.targetPort | default 8200 }}
   tls:
     {{- toYaml .Values.server.route.tls | nindent  4 }}
 {{- end }}

@@ -843,6 +843,14 @@
                         "labels": {
                             "type": "object"
                         },
+                        "port": {
+                            "type": "object",
+                            "properties": {
+                                "targetPort": {
+                                    "type": "integer"
+                                }
+                            }
+                        },
                         "tls": {
                             "type": "object"
                         }
