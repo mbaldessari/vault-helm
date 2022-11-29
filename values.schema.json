@@ -854,8 +854,36 @@
                         "active": {
                             "type": "object",
                             "properties": {
+                                "annotations" : {
+                                    "type": [
+                                        "object",
+                                        "string"
+                                    ]
+                                },
                                 "enabled": {
                                     "type": "boolean"
+                                }
+                            }
+                        },
+                        "internal": {
+                            "type": "object",
+                            "properties": {
+                                "annotations": {
+                                    "type": [
+                                        "object",
+                                        "string"
+                                    ]
+                                }
+                            }
+                        },
+                        "nonha": {
+                            "type": "object",
+                            "properties": {
+                                "annotations": {
+                                    "type": [
+                                        "object",
+                                        "string"
+                                    ]
                                 }
                             }
                         },
@@ -890,6 +918,12 @@
                             "properties": {
                                 "enabled": {
                                     "type": "boolean"
+                                },
+                                "annotations": {
+                                    "type": [
+                                        "object",
+                                        "string"
+                                    ]
                                 }
                             }
                         },

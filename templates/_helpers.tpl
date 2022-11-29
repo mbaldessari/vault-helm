@@ -684,6 +684,63 @@ Sets extra vault server Service annotations
 {{- end -}}
 
 {{/*
+Sets extra vault server Service active annotations
+*/}}
+{{- define "vault.service.active.annotations" -}}
+  {{- if .Values.server.service.active.annotations }}
+    {{- $tp := typeOf .Values.server.service.active.annotations }}
+    {{- if eq $tp "string" }}
+      {{- tpl .Values.server.service.active.annotations . | nindent 4 }}
+    {{- else }}
+      {{- toYaml .Values.server.service.active.annotations | nindent 4 }}
+    {{- end }}
+  {{- end }}
+{{- end -}}
+
+{{/*
+Sets extra vault server Service standby annotations
+*/}}
+{{- define "vault.service.standby.annotations" -}}
+  {{- if .Values.server.service.standby.annotations }}
+    {{- $tp := typeOf .Values.server.service.standby.annotations }}
+    {{- if eq $tp "string" }}
+      {{- tpl .Values.server.service.standby.annotations . | nindent 4 }}
+    {{- else }}
+      {{- toYaml .Values.server.service.standby.annotations | nindent 4 }}
+    {{- end }}
+  {{- end }}
+{{- end -}}
+
+{{/*
+Sets extra vault server Service internal annotations
+*/}}
+{{- define "vault.service.internal.annotations" -}}
+  {{- if .Values.server.service.internal.annotations }}
+    {{- $tp := typeOf .Values.server.service.internal.annotations }}
+    {{- if eq $tp "string" }}
+      {{- tpl .Values.server.service.internal.annotations . | nindent 4 }}
+    {{- else }}
+      {{- toYaml .Values.server.service.internal.annotations | nindent 4 }}
+    {{- end }}
+  {{- end }}
+{{- end -}}
+{{/*
+Sets extra vault server Service nonha annotations
+Note: We call it 'nonha' as we need to differentiate the "vault.service.annotations" which are
+      applied to all services
+*/}}
+{{- define "vault.service.nonha.annotations" -}}
+  {{- if .Values.server.service.nonha.annotations }}
+    {{- $tp := typeOf .Values.server.service.nonha.annotations }}
+    {{- if eq $tp "string" }}
+      {{- tpl .Values.server.service.nonha.annotations . | nindent 4 }}
+    {{- else }}
+      {{- toYaml .Values.server.service.nonha.annotations | nindent 4 }}
+    {{- end }}
+  {{- end }}
+{{- end -}}
+
+{{/*
 Sets PodSecurityPolicy annotations
 */}}
 {{- define "vault.psp.annotations" -}}

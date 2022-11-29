@@ -15,6 +15,7 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   annotations:
 {{ template "vault.service.annotations" .}}
+{{ template "vault.service.nonha.annotations" .}}
 spec:
   {{- if .Values.server.service.type}}
   type: {{ .Values.server.service.type }}

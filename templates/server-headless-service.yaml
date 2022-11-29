@@ -16,6 +16,7 @@ metadata:
     vault-internal: "true"
   annotations:
 {{ template "vault.service.annotations" .}}
+{{ template "vault.service.internal.annotations" .}}
 spec:
   clusterIP: None
   publishNotReadyAddresses: {{ .Values.server.service.publishNotReadyAddresses }}
